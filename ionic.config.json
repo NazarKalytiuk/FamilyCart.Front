@@ -1,0 +1,7 @@
+{
+  "name": "family-cart",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
