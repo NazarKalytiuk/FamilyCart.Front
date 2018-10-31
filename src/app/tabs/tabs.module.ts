@@ -7,9 +7,9 @@ import { FormsModule } from '@angular/forms';
 import { TabsPageRoutingModule } from './tabs.router.module';
 
 import { TabsPage } from './tabs.page';
-import { ContactPageModule } from '../contact/contact.module';
-import { AboutPageModule } from '../about/about.module';
-import { CartPageModule } from '../home/cart.module';
+import { MapPageModule } from '../map/map.module';
+import { SettingsPageModule } from '../settings/settings.module';
+import { CartPageModule } from '../cart/cart.module';
 
 @NgModule({
   imports: [
@@ -18,8 +18,8 @@ import { CartPageModule } from '../home/cart.module';
     FormsModule,
     TabsPageRoutingModule,
     CartPageModule,
-    AboutPageModule,
-    ContactPageModule
+    MapPageModule,
+    SettingsPageModule
   ],
   declarations: [TabsPage]
 })

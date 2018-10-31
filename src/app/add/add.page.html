@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Назад" defaultHref="/"></ion-back-button> 
+    </ion-buttons>
+    <ion-title>Нова покупка</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-input type="text" name="title" placeholder="Назва" [(ngModel)]="product"></ion-input>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-buttons slot="end">
+      <ion-button (click)="addProduct()">Додати</ion-button>
+    </ion-buttons>
+  </ion-item>
+</ion-content>

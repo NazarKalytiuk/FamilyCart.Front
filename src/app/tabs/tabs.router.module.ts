@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { TabsPage } from './tabs.page';
-import { AboutPage } from '../about/about.page';
-import { ContactPage } from '../contact/contact.page';
-import { CartPage } from '../home/cart.page';
+import { MapPage } from '../map/map.page';
+import { SettingsPage } from '../settings/settings.page';
+import { CartPage } from '../cart/cart.page';
 
 const routes: Routes = [
   {
@@ -12,24 +12,19 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: '',
-        redirectTo: '/tabs/(home:home)',
-        pathMatch: 'full',
-      },
-      {
         path: 'cart',
         outlet: 'cart',
         component: CartPage
       },
       {
-        path: 'about',
-        outlet: 'about',
-        component: AboutPage
+        path: 'map',
+        outlet: 'map',
+        component: MapPage
       },
       {
-        path: 'contact',
-        outlet: 'contact',
-        component: ContactPage
+        path: 'settings',
+        outlet: 'settings',
+        component: SettingsPage
       }
     ]
   },

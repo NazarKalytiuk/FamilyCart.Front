@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Налаштування
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding *ngIf="user">
+  <ion-item>
+    <ion-avatar slot="start">
+      <img [src]="user.photoURL">
+    </ion-avatar>
+    <ion-label>
+      <h2>{{user.displayName}}</h2>
+      <h3>{{user.email}}</h3>
+    </ion-label>
+  </ion-item>
+  <ion-button (click)="signOut()" expand="full">
+    <ion-icon size="large" name="logo-google"></ion-icon>
+    Вихід
+  </ion-button>
+</ion-content>
