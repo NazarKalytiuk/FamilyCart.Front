@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Карта</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="userCoords">
+    <agm-map [styles]="myStyles" #map [latitude]="userCoords.latitude" [longitude]="userCoords.longitude" [zoom]="16">
+      <!-- <agm-marker-cluster>
+          <agm-marker *ngFor="let m of places" [latitude]="m.geometry.location.lat()" [label]="m.name" 
+          [longitude]="m.geometry.location.lng()"
+          ></agm-marker>
+      </agm-marker-cluster> -->
+      <agm-marker [latitude]="userCoords.latitude" [longitude]="userCoords.longitude"></agm-marker>
+    </agm-map>
+</ion-content>
