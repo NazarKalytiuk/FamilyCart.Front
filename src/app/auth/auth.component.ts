@@ -50,8 +50,12 @@ export class AuthComponent implements OnInit {
 
   async googleLogin() {
     if (this.pl.is('cordova')) {
-      await this.nativeGoogleLogin();
-      this.router.navigate(['/tabs']);
+      try {
+        await this.nativeGoogleLogin();
+        this.router.navigate(['/tabs']);
+      } catch (error) {
+        this.router.navigate(['/login']);
+      }
     } else {
       await this.webGoogleLogin();
       this.router.navigateByUrl('/tabs/(cart:cart)');
@@ -65,15 +69,10 @@ export class AuthComponent implements OnInit {
         offline: true,
         scopes: 'profile email'
       });
-      const res =  await this.af.auth.signInWithCredential(firebase.auth.GoogleAuthProvider.credential(gplusUser.idToken));
+      return await this.af.auth.signInWithCredential(firebase.auth.GoogleAuthProvider.credential(gplusUser.idToken));
     } catch (error) {
-      const alert = await this.alertCtrl.create({
-        header: 'Alert',
-        subHeader: 'Subtitle',
-        message: error,
-        buttons: ['OK']
-      });
-      await alert.present();
+      console.log(error);
+      throw error;
     }
   }
 
