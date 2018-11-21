@@ -11,7 +11,7 @@
 
 <ion-content padding>
   <ion-list lines="full" #list>
-    <ion-item-sliding *ngFor="let p of products">
+    <ion-item-sliding *ngFor="let p of products; trackBy: p?.id">
       <ion-item>
         <ion-checkbox color="primary" (ionChange)="onCheckboxChange(p)" [(ngModel)]="p.checked" slot="end"></ion-checkbox>
         <ion-label>

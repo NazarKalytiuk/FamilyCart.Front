@@ -69,7 +69,7 @@ export class AuthComponent implements OnInit {
         offline: true,
         scopes: 'profile email'
       });
-      return await this.af.auth.signInWithCredential(firebase.auth.GoogleAuthProvider.credential(gplusUser.idToken));
+      return await this.af.auth.signInAndRetrieveDataWithCredential(firebase.auth.GoogleAuthProvider.credential(gplusUser.idToken));
     } catch (error) {
       console.log(error);
       throw error;
